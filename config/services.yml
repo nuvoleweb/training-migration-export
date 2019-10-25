@@ -1,5 +1,5 @@
 parameters:
-  drupal.root: './site/web'
+  drupal.root: './site'
   drupal.uri: 'http://drupal.docker.localhost:8000'
 
   export.root: './content'
