@@ -6,3 +6,8 @@ parameters:
         - { processor: NodeMetadataProcessor }
         - { processor: PropertyProcessor, source: title, destination: title }
         - { processor: LongTextAndSummaryProcessor, source: body, destination: body }
+
+      blog:
+        - { processor: NodeMetadataProcessor }
+        - { processor: PropertyProcessor, source: title, destination: title }
+        - { processor: LongTextAndSummaryProcessor, source: body, destination: body }
