@@ -12,11 +12,12 @@ class LongTextAndSummaryProcessor extends BaseProcessor
      */
     public function processAttributes(array &$attributes, \stdClass $entity, $language, array $configuration)
     {
+        $parsedown = new \Parsedown();
         $destination = $configuration['destination'];
         $values = $this->getFieldValues($entity, $configuration['source'], $language, []);
         foreach ($values as $key => $value) {
-            $this->setAttributeValue($attributes, "{$destination}_value", $value['value']);
-            $this->setAttributeValue($attributes, "{$destination}_summary", $value['summary']);
+            $this->setAttributeValue($attributes, "{$destination}_value", $parsedown->text($value['value']));
+            $this->setAttributeValue($attributes, "{$destination}_summary", $parsedown->text($value['summary']));
         }
     }
 }
