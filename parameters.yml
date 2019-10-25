@@ -11,3 +11,17 @@ parameters:
         - { processor: NodeMetadataProcessor }
         - { processor: PropertyProcessor, source: title, destination: title }
         - { processor: LongTextAndSummaryProcessor, source: body, destination: body }
+        - { processor: LongTextProcessor, source: field_blog_subtitle, destination: subtitle }
+        - processor: FileProcessor
+          source: field_blog_attachments
+          destination: attachments
+          whitelist:
+            - filename
+            - uri
+            - filemime
+            - filesize
+            - status
+            - timestamp
+            - display
+            - description
+
